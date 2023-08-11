@@ -6,9 +6,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
+@CucumberOptions(tags="@tag1",
   features = "Features/swaglab.feature"
-  ,glue={"Stepdefs"}
+  ,glue={"Stepdefs"},
+  plugin= {"pretty","html:target/swaglab.html"}
   )
 public class TestRunner {
 

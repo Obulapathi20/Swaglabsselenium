@@ -12,20 +12,20 @@ public class Swagladstepdef {
 	
 	
 	@Given("user open the url {string}")
-	public void user_open_the_url(String string) throws InterruptedException {
-		Thread.sleep(3000);
+	public void user_open_the_url(String string)   {
+		//Thread.sleep(3000);
 		hooks.driver.get(string);
 	    
 	}
 
 	@When("user enter the valid username {string}")
-	public void user_enter_the_valid_username(String string) {
-		swag.loginusername(string);
+	public void user_enter_the_valid_username(String string1) {
+		swag.loginusername(string1);
 	   	}
 
 	@When("user enter the valid password {string}")
-	public void user_enter_the_valid_password(String string) {
-		swag.loginpassword(string);
+	public void user_enter_the_valid_password(String string2) {
+		swag.loginpassword(string2);
 	   	}
 
 	@When("user click the submit button")
@@ -35,19 +35,19 @@ public class Swagladstepdef {
 
 	@Then("user able to login sucessfully")
 	public void user_able_to_login_sucessfully() {
-		System.out.println(hooks.driver.getTitle());
-		Assert.assertEquals("Swag Labs",hooks.driver.getTitle());
+		System.out.println(hooks.driver.getCurrentUrl());
+		Assert.assertEquals("https://www.saucedemo.com/inventory.html",hooks.driver.getCurrentUrl());
 		
 	    	}
 	
 	@When("user enter the invalid username {string}")
-	public void user_enter_the_invalid_username(String string) {
-		swag.loginusername(string);
+	public void user_enter_the_invalid_username(String string3) {
+		swag.loginusername(string3);
 	    	}
 
 	@When("user enter the invalid password {string}")
-	public void user_enter_the_invalid_password(String string) {
-		swag.loginpassword(string);
+	public void user_enter_the_invalid_password(String string4) {
+		swag.loginpassword(string4);
 	   
 	}
 	
